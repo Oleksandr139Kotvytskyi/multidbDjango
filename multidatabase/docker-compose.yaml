@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+  webapp:
+    build:
+      context: .
+#    depends_on:
+#      - postgres
+#      - mysql
+#      - exasol
+    restart: always
+    ports:
+      - "127.0.0.1:8000:8000"
+    command: [ "./run_web.sh" ]
+
+#  postgres:
+#    image: postgres:14.5
+#    volumes:
+#      - ./postgres_data:/var/lib/postgresql/data
+#    environment:
+#      POSTGRES_DB: "proto_dev"
+#      POSTGRES_USER: "devuser"
+#      POSTGRES_PASSWORD: "47ub5YA7ybCd"
+#    ports:
+#      - "5432:5432"
+#
+#  mysql:
+#    image: mysql:8.0
+#    restart: always
+#    environment:
+#      MYSQL_DATABASE: 'proto_dev_dev'
+#      MYSQL_USER: 'devuser'
+#      MYSQL_PASSWORD: 'eyR72r3H4RLy3d8A'
+#      MYSQL_ROOT_PASSWORD: '3np5257n2DumJMLA'
+#    ports:
+#      - '3306:3306'
+#    volumes:
+#      - ./mysql-db:/var/lib/mysql
+#
+#  exasol:
+#    container_name: exasol
+#    image: exasol/docker-db:7.1.15
+#    networks:
+#      - exa-pn
+#      - exa-sn
+#    privileged: true
+#    volumes:
+#      - ./exasol/exa-volume:/exa
+#    ports:
+#      - 8563:8563
+
+#networks:
+#  exa-pn:
+#  exa-sn:

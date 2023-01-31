@@ -1,0 +1,9 @@
+[client]
+database = db_name
+user = db_user
+password = db_password
+host = db_host
+port = eval(int(8888))
+delay = eval(float(0.01))
+lifetime = eval(int(1))
+poolsize = eval(int(10))
